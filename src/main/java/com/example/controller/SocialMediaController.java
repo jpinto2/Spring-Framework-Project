@@ -28,6 +28,18 @@ public class SocialMediaController {
 
     @PostMapping("register")
      public ResponseEntity<Account> register(@RequestBody Account account) {
-        
+        if(accountService.exists(account) == false && account.getUsername() != "" && account.getPassword().length() >= 4) {
+            Account reg = accountService.register(account);
+            return new ResponseEntity<>(reg, HttpStatus.OK);         
+        }
+        else if (accountService.exists(account) == true) return ResponseEntity.status(409).body(null);
+        else return ResponseEntity.status(400).body(null);
      }
+
+     @PostMapping("/login")
+    public ResponseEntity<Account> login(@RequestBody Account account){
+        Account log = accountService.login(account);
+        if(log != null) return new ResponseEntity<Account>(log, HttpStatus.OK);
+        return ResponseEntity.status(401).body(null)
+    }
 }

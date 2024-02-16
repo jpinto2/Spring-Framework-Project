@@ -21,4 +21,10 @@ public class AccountService {
         return accountRepository.findByUsernameAndPassword(account.getUsername(), account.getPassword());
     }
 
+    public Boolean exists(Account account){
+        Account duplicate = accountRepository.findByUsername(account.getUsername());
+        if(duplicate != null) return true;
+        else return false;
+    }
+
 }
