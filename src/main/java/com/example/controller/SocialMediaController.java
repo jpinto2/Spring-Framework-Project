@@ -22,8 +22,8 @@ import com.example.service.AccountService;
 public class SocialMediaController {
 
     @Autowired
-    private AccountService accountService;
-    @Autowired
+    public AccountService accountService;
+    // 
     // private MessageService messageService;
 
     @PostMapping("register")
@@ -36,7 +36,7 @@ public class SocialMediaController {
         else return ResponseEntity.status(400).body(null);
      }
 
-     @PostMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<Account> login(@RequestBody Account account){
         Account log = accountService.login(account);
         if(log != null) return new ResponseEntity<Account>(log, HttpStatus.OK);

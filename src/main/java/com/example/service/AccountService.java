@@ -10,7 +10,7 @@ import com.example.exception.GeneralException;
 public class AccountService {
 
     @Autowired
-    private AccountRepository accountRepository;
+    public AccountRepository accountRepository;
 
     public Account register(Account account) {
         // decided to move error check to media controller
