@@ -40,6 +40,6 @@ public class SocialMediaController {
     public ResponseEntity<Account> login(@RequestBody Account account){
         Account log = accountService.login(account);
         if(log != null) return new ResponseEntity<Account>(log, HttpStatus.OK);
-        return ResponseEntity.status(401).body(null)
+        return ResponseEntity.status(401).body(null);
     }
 }
