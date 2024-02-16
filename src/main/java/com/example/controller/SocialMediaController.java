@@ -1,14 +1,14 @@
 package com.example.controller;
 
-import java.util.List;
+// import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.entity.Account;
-import com.example.entity.Message;
+// import com.example.entity.Message;
 import com.example.service.AccountService;
-import com.example.service.MessageService;
+// import com.example.service.MessageService;
 
 
 /**
@@ -24,7 +24,7 @@ public class SocialMediaController {
     @Autowired
     private AccountService accountService;
     @Autowired
-    private MessageService messageService;
+    // private MessageService messageService;
 
     @PostMapping("register")
      public ResponseEntity<Account> register(@RequestBody Account account) {
