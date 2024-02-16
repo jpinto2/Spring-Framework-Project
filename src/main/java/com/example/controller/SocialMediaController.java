@@ -17,6 +17,17 @@ import com.example.service.MessageService;
  * where applicable as well as the @ResponseBody and @PathVariable annotations. You should
  * refer to prior mini-project labs and lecture materials for guidance on how a controller may be built.
  */
+
+@RestController 
 public class SocialMediaController {
 
+    @Autowired
+    private AccountService accountService;
+    @Autowired
+    private MessageService messageService;
+
+    @PostMapping("register")
+     public ResponseEntity<Account> register(@RequestBody Account account) {
+        
+     }
 }

@@ -13,10 +13,8 @@ public class AccountService {
     private AccountRepository accountRepository;
 
     public Account register(Account account) {
-        Account duplicate = accountRepository.findByUsername(account.getUsername());
-        if(duplicate == null && account.getUsername() != null && account.getPassword().length() >= 4) return accountRepository.save(account);
-        else throw new GeneralException("Invalid output");
-    
+        // decided to move error check to media controller
+        return accountRepository.save(account);
     }
 
     public Account login(Account account){
