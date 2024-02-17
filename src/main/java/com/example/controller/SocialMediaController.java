@@ -89,7 +89,7 @@ public class SocialMediaController {
     public ResponseEntity<Integer> updateMessage(@RequestBody Message message, @PathVariable("message_id") int id){
         Message update = messageService.updateMessage(message, id);
 
-        if(update != null) return ResponseEntity.status(400).body(1);
-        else return ResponseEntity.status(200).body(null);
+        if(update != null) return ResponseEntity.status(200).body(1);
+        else return ResponseEntity.status(400).body(null);
     }
 }
