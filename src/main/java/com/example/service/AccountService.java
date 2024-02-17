@@ -27,4 +27,11 @@ public class AccountService {
         else return false;
     }
 
+    public Boolean exists(int id){
+        Account account = accountRepository.findById(id);
+        if(account != null) return true;
+        else return false;
+    }
+
+
 }
